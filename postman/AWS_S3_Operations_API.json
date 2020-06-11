@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "c7d3edc4-1267-4698-b3ae-747e5fdb511c",
+		"name": "AWS_S3_Operations_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create New S3 Bucket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/aws/bucket/create/bucket-my",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"aws",
+						"bucket",
+						"create",
+						"bucket-my"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Existing S3 Buckets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/aws/bucket/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"aws",
+						"bucket",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Files Under S3 Bucket",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/aws/bucket/files/bucket-my",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"aws",
+						"bucket",
+						"files",
+						"bucket-my"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Single File On S3 Bucket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/E:/Images/image1.jpg"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/E:/Images/image3.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/aws/bucket/file/upload/bucket-my?bucketName=bucket-my",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"aws",
+						"bucket",
+						"file",
+						"upload",
+						"bucket-my"
+					],
+					"query": [
+						{
+							"key": "bucketName",
+							"value": "bucket-my"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download Single File From S3 Bucket",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/aws/bucket/file/download/bucket-my/2c014868-8306-4d50-88c0-c0d86533682fimage1.jpg ",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"aws",
+						"bucket",
+						"file",
+						"download",
+						"bucket-my",
+						"2c014868-8306-4d50-88c0-c0d86533682fimage1.jpg "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Single File From S3 Bucket",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/aws/bucket/file/delete/bucket-my/2c014868-8306-4d50-88c0-c0d86533682fimage1.jpg ",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"aws",
+						"bucket",
+						"file",
+						"delete",
+						"bucket-my",
+						"2c014868-8306-4d50-88c0-c0d86533682fimage1.jpg "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete S3 Bucket Permanently",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/aws/bucket/delete/hard/bucket-my",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"aws",
+						"bucket",
+						"delete",
+						"hard",
+						"bucket-my"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
